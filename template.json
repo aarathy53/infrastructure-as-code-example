@@ -1,7 +1,7 @@
 {
   "Description": "Create an EC2 instance by AWS CloudFormation",
   "Resources": {
-    "SecurityGroupDemoSvrTraffic": {
+    "mysg": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupName": "sgDemoSvr",
@@ -43,7 +43,7 @@
             "PrivateIpAddress": "[Find subnet in VPC-->Subnets, and IP address would start from 4. 0 to 3 are reserved by AWS.]",
             "GroupSet": [
               {
-                "Ref": "SecurityGroupDemoSvrTraffic"
+                "Ref": "mysg"
               }
             ]
           }
